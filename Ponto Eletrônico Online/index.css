@@ -1,0 +1,90 @@
+:root{
+    --cor1: #2b96c8;
+    --cor2: #c29db2;
+    --cor3: #9bc2df;
+    --cor4: #d6bb70;
+    --cor5: transparent;
+}
+
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: grid;
+    /* grid-template-rows: 50vh 10vh 40vh; */
+    grid-template: 
+        "esquerda table" 50vh
+        "esquerda table" 40vh
+        / 1.3fr 2fr;
+    padding: 0;
+    margin: 0;
+    background-color: var(--cor1);
+    justify-items: center;
+}
+
+nav {
+    grid-area: nav;
+    margin-bottom: 5%;
+}
+
+nav img{
+    margin: 2.5vh 0 0 0vw;
+    height: 40vh;
+}
+
+/* ##### TABLE STYLE ###### */
+table{
+    grid-area: table;
+    margin-top: 10vh;
+    border-collapse: collapse;    
+}
+
+th, td{
+    padding: 10px;
+}
+
+th{
+    background-color: var(--cor5);
+}
+
+tr:nth-child(even) { background-color: var(--cor2);}
+tr:nth-child(odd) { background-color: var(--cor3);}
+tr{ 
+    border-bottom: 10px solid var(--cor1);
+}
+
+
+#description{
+    height: 80px;
+    justify-self: baseline;
+}
+
+/* ###### FORM STYLE ###### */
+form { 
+    grid-area: form;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    row-gap: 10px;
+}
+
+#esquerda{
+    grid-area: esquerda;
+    /* border: 1px solid white;
+    border-style: dashed; */
+    border-radius: 0% 0% 2% 50%;
+    
+    background-color: var(--cor4);
+    padding: 5%;
+    height: 90vh;
+}
+
+input, textarea{
+    background-color: transparent;
+    border: 1px solid white;
+    grid-column: 2 / 3;
+    border-radius: 5px;
+}
+
+label{
+    grid-column: 1 / 2;
+    justify-self: left;
+}
